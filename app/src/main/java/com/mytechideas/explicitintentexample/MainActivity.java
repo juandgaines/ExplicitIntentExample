@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 //TODO 9: Implement the the OnClickAdapter interface in the MainActivityClass
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MyAdapter.OnClickAdapter {
 
     private static final String KEY_CONTACT ="key_contact" ;
     private RecyclerView recyclerView;
@@ -33,15 +33,17 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         // specify an adapter (see also next example)
-        mAdapter = new MyAdapter(myDataset,this);
+        //TODO 10: Pass the MainActivity context to the adapter as a second parameter.
+        mAdapter = new MyAdapter(myDataset);
         recyclerView.setAdapter(mAdapter);
     }
-    //TODO 10: Cast the view to a TextView and save it on a TexView variable
-    //TODO 11: Get the string from the TextView and save it into a String object.
 
-    //TODO 12: Create a new Intent variable named intent and pass the MainActivity.this as a first parameter and the activity
+    //TODO 11: Cast the view to a TextView and save it on a TexView variable
+    //TODO 12: Get the string from the TextView and save it into a String object.
+
+    //TODO 13: Create a new Intent variable named intent and pass the MainActivity.this as a first parameter and the activity
     //we want to call as a second parameter (DetailsActivity.class).
-    //TODO 13: Add the extra data to the intent that we would share to the second activity using the constant field KEY_CONTACT.
-    //TODO 14: call startActivity() method and pass the intent variable as a parameter.
+    //TODO 14: Add the extra data to the intent that we would share to the second activity using the constant field KEY_CONTACT.
+    //TODO 15: call startActivity() method and pass the intent variable as a parameter.
 
 }

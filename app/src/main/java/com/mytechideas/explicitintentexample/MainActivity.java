@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 //TODO 9: Implement the the OnClickAdapter interface in the MainActivityClass
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MyAdapter.OnclickAdapter {
 
     private static final String KEY_CONTACT ="key_contact" ;
     private RecyclerView recyclerView;
@@ -34,8 +34,19 @@ public class MainActivity extends AppCompatActivity {
 
         // specify an adapter (see also next example)
         //TODO 10: Pass the MainActivity context to the adapter as a second parameter.
-        mAdapter = new MyAdapter(myDataset);
+        mAdapter = new MyAdapter(myDataset,this);
         recyclerView.setAdapter(mAdapter);
+    }
+
+    @Override
+    public void OnClickView(View view) {
+        TextView mText= (TextView) view;
+        String text= mText.getText().toString();
+
+        Intent intent = new Intent( MainActivity.this, DetailsActivity.class);
+
+        intent.putExtra(KEY_CONTACT, text);
+        startActivity(intent);
     }
 
     //TODO 11: Cast the view to a TextView and save it on a TexView variable

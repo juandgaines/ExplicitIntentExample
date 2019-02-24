@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 //TODO 9: Implement the the OnClickAdapter interface in the MainActivityClass
 
-public class MainActivity extends AppCompatActivity implements MyAdapter.OnClickAdapter {
+public class MainActivity extends AppCompatActivity {
 
     private static final String KEY_CONTACT ="key_contact" ;
     private RecyclerView recyclerView;
